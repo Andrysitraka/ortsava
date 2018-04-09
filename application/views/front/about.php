@@ -1,7 +1,3 @@
-
-<div class="container-fluide">
-        <img src="<?php echo base_url();?>images/slide2.jpg" alt="New York" width="100%" height="400" class="img-responsive">  
-</div> 
 	<!-- about -->
 	<div class="welcome about">
 		<div class="container">  
@@ -37,8 +33,6 @@
 	<!-- statistics -->
 	<!-- //statistics -->
 	<!-- about-features -->
-	<div class="slid about-slid">
-		<div class="container">
 			<div class="slid">
 		<div class="container">	 
 			<div class="services-w3ls-row">
@@ -83,8 +77,7 @@
  			
 	</div>			
 			</div>	
-		</div>
-	</div>
+		
 	<!-- //about-features -->
 	<!-- team -->
 	<div class="container">

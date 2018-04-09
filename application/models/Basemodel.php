@@ -41,7 +41,7 @@ class Basemodel  extends CI_Model{
 
 	public function getSousCircuitByCircuitIdh()
 	{
-		$query = $this->db->query("SELECT id,nom,contenu FROM sous_circuit ORDER BY RAND()  LIMIT 3");
+		$query = $this->db->query("SELECT id,nom,contenu FROM sous_circuit ORDER BY RAND()  LIMIT 6");
 		return $query->result();
 
 	}

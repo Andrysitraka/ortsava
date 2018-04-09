@@ -1,12 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>ORT SAVA</title>
+<title>Tourisme-SAVA</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="keywords" content="" />
 <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
 <!-- Custom Theme files -->
+<link rel="icon" type="image/png" href="<?php echo base_url();?>images/favicon.png" />
 <link href="<?php echo base_url();?>css/bootstrap.css" type="text/css" rel="stylesheet" media="all">
 <link href="<?php echo base_url();?>css/style.css" type="text/css" rel="stylesheet" media="all">   
 <link rel="stylesheet" href="<?php echo base_url();?>css/flexslider.css" type="text/css" media="all" property="" />   
@@ -36,7 +37,7 @@
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a href="<?php echo site_url();?>/Mycontroller/index" style="color:#aebe27">Tourisme<span> SAVA</span></a></h1>
+						<h1><a href="<?php echo site_url();?>/visitez/index" style="color:#aebe27">Tourisme<span> SAVA</span></a></h1>
 					</div> 
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse " id="bs-example-navbar-collapse-1">
@@ -46,10 +47,17 @@
 							
 							<li><a href="#" class="dropdown-toggle btn w3ls-hover" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Destination <span class="caret"></span></a>
 								<ul class="dropdown-menu">
-									<li><a href="<?php echo site_url();?>/visitez/index">Andapa</a></li>
-									<li><a href="<?php echo site_url();?>/visitez/index">Antalaha</a></li>
-									<li><a href="<?php echo site_url();?>/visitez/index">Sambava</a></li>
-									<li><a href="<?php echo site_url();?>/Auth/login/">Vohemara</a></li>     
+									<?php 
+								$query="SELECT id,nom FROM circuit order by nom"; 
+								$query=$this->db->query($query);
+								$result=$query->result();
+								foreach ($result as $row) {?>
+									<li>
+										<a class="hvr-sweep-to-bottom" href="<?php echo site_url();?>/visitez/circuit/<?php echo $row->id;?>">
+										<?php echo $row->nom;?>
+										</a>
+									</li>
+								<?php } ?>   
 								</ul>
 							</li>  
 							<li><a href="<?php echo site_url();?>/visitez/contact" class="btn w3ls-hover">Contact</a></li>
